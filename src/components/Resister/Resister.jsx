@@ -3,14 +3,22 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
 const Resister = () => {
-  const { name } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
 
   const handleResister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(form, email, password);
+    
+    // create user with email & password
+    createUser(email,password)
+    .then(result=>{
+      console.log(result.user)
+    })
+    .catch(error=>{
+      console.log(error)
+    })
   };
 
   return (
@@ -52,6 +60,7 @@ const Resister = () => {
           <div className="form-control mt-6">
             <button className="btn btn-primary">Resister</button>
           </div>
+          <p className="text-center">Already have an accout? Please <Link to='/login'><span className="font-semibold text-blue-700 underline">Log In</span></Link></p>
         </form>
       </div>
     </div>
