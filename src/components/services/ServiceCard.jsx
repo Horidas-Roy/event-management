@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const ServiceCard = ({service}) => {
     const {id,title,description,img}=service
     return (
@@ -20,13 +22,15 @@ const ServiceCard = ({service}) => {
       }...
     </p>
     <div>
+    <Link to={`/service/${id}`}>
     <button
-      className="select-none rounded-lg text-lg bg-pink-500 w-full py-3 px-6 text-center align-middle  font-bold uppercase text-[#121328] shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      className=" rounded-lg text-lg bg-pink-500 w-full py-3 px-6 text-center  font-bold text-[#121328] "
       type="button"
       data-ripple-light="true"
     >
       Details
     </button>
+    </Link>
   </div>
   </div>
   

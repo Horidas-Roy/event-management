@@ -10,19 +10,21 @@ import {AiOutlineMail } from 'react-icons/ai';
 
 const Home = () => {
   const services = useLoaderData();
-  console.log(services);
   const handleContact=()=>{
        console.log("form click")
   }
   return (
-    <div>
+    <div data-aos="flip-left">
+      <div  data-aos="zoom-in-right">
       <Baner></Baner>
+      </div>
       <div>
         <h2 className="text-center text-6xl font-bold my-20">
           Our Services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 px-4 lg:grid-cols-4 gap-6">
-          {services.map((service) => (
+          {
+          services?.map((service) => (
             <ServiceCard key={service.id} service={service}></ServiceCard>
           ))}
         </div>
@@ -31,7 +33,7 @@ const Home = () => {
         <h2 className="text-center text-5xl font-bold my-20">About Us</h2>
         <div>
           <img src={`${aboutImg}`} alt="" />
-          <p className="p-10 text-center">
+          <p className="px-6 text-center">
             Welcome to{" "}
             <span className="font-semibold">Wedding Arranger</span>, where
             dreams become memorable realities. With a passion for creating
@@ -53,31 +55,31 @@ const Home = () => {
       <div>
         <h2 className="text-center text-5xl font-bold mt-10 mb-5">Contact Us</h2>
         <div   className="flex flex-col md:flex-row justify-evenly mb-10">
-        <div className="flex-1 justify-center flex ">
-        <div className="space-y-5  p-10">
-        <div className="flex justify-start items-center">
-        <BiLocationPlus></BiLocationPlus>
+        <div data-aos="zoom-in-right" className="flex-1 justify-center flex ">
+        <div className="space-y-5 ">
+        <div className="flex justify-start gap-4 text-xl items-center">
+        <BiLocationPlus className="text-5xl"></BiLocationPlus>
         <div>
           <h2>Our Office Address</h2>
-          <p>HSTU Campus,Dinajpur,Rangpur,<br></br> Dhaka,Banglades</p>
+          <p>HSTU,Dinajpur,Rangpur,<br></br> Dhaka,Banglades</p>
         </div>
         </div>
-        <div className="flex justify-start items-center">
-        <AiOutlineMail></AiOutlineMail>
+        <div className="flex justify-start gap-4 text-xl items-center">
+        <AiOutlineMail  className="text-5xl"></AiOutlineMail>
         <div>
           <h2>General Enquiries</h2>
           <p><a href="">abc@gmail.com</a></p>
         </div>
         </div>
-        <div className="flex justify-start items-center">
-        <BiSolidPhoneCall></BiSolidPhoneCall>
+        <div className="flex justify-start gap-4 text-xl items-center">
+        <BiSolidPhoneCall  className="text-5xl"></BiSolidPhoneCall>
         <div>
           <h2>Call Us</h2>
           <p>+880 175873...</p>
         </div>
         </div>
-        <div className="flex justify-start items-center">
-        <BiTimeFive></BiTimeFive>
+        <div className="flex justify-start gap-4 text-xl items-center">
+        <BiTimeFive  className="text-5xl"></BiTimeFive>
         <div>
           <h2>Our Timing</h2>
           <p>Mon-Sun 10am to - 7pm</p>
@@ -85,7 +87,7 @@ const Home = () => {
         </div>
         </div>
         </div>
-          <div className="flex-1 justify-center">
+          <div data-aos="zoom-in-left" className="flex-1 justify-center">
 
              <form onSubmit={handleContact} className="space-y-5 p-10">
               <input type="text" placeholder="Your Name" className="block text-[#101632c2] w-full border-2 px-4 py-2 rounded-lg"/>

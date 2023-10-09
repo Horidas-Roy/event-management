@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        satisfy: "'Satisfy', cursive",
-        poppins:"'Poppins', sans-serif",
+        satisfy:[ "'Satisfy', cursive"],
+        poppins:["'Poppins', sans-serif"],
       },
     },
   },

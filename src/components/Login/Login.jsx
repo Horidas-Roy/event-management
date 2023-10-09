@@ -1,11 +1,13 @@
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
 const Login = () => {
 
    const {SignInUser,googleSignIn,gitHubSignIn}=useContext(AuthContext);
+   const location=useLocation();
+   const navigate=useNavigate();
 
 
   const handleLogIn=(e)=>{
@@ -17,6 +19,7 @@ const Login = () => {
     // log in user
     SignInUser(email,password)
     .then(result=>{
+      navigate(location?.state ? location.state : "/");
       console.log(result.user)
     })
     .catch(error=>{
@@ -28,6 +31,7 @@ const Login = () => {
   const handleGoogleSignIn=()=>{
       googleSignIn()
       .then(result=>{
+        navigate(location?.state ? location.state : "/");
         console.log(result.user)
       })
       .catch(error=>{
@@ -38,6 +42,7 @@ const Login = () => {
   const handleGithubSignIn=()=>{
     gitHubSignIn()
     .then(result=>{
+      navigate(location?.state ? location.state : "/");
       console.log(result.user)
     })
     .catch(error=>{
