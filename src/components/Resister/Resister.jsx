@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
 const Resister = () => {
+  const [loginErr,setLoginErr]=useState();
   const { createUser } = useContext(AuthContext);
 
   const handleResister = (e) => {
@@ -10,14 +11,23 @@ const Resister = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+
+    setLoginErr("");
+
+    if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
+      setLoginErr('password must have contain Minimum six characters, at least one letter, one number and one special character:');
+      return;
+   }
     
     // create user with email & password
     createUser(email,password)
     .then(result=>{
       console.log(result.user)
+      
     })
     .catch(error=>{
-      console.log(error)
+      console.log(error);
+      setLoginErr(error.message);
     })
   };
 
@@ -56,6 +66,11 @@ const Resister = () => {
                 Forgot password?
               </a>
             </label>
+          </div>
+          <div>
+            {
+              loginErr && <span className="text-red-600">{loginErr}</span>
+            }
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Resister</button>

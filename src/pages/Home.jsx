@@ -8,6 +8,7 @@ import aboutImg from "../../src/assets/about.jpg";
 import {BiLocationPlus, BiSolidPhoneCall, BiTimeFive } from 'react-icons/bi';
 import {AiOutlineMail } from 'react-icons/ai';
 
+
 const Home = () => {
   const services = useLoaderData();
   const handleContact=()=>{

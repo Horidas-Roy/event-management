@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({service}) => {
-    const {id,title,description,img}=service
+    const {id,title,description,img,price}=service
     return (
         <div className="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
   <div className="relative overflow-hidden rounded-xl rounded-b-none bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
@@ -21,6 +21,7 @@ const ServiceCard = ({service}) => {
        description.slice(0,100)
       }...
     </p>
+    <p className="mb-3 font-semibold">Cost For This Service:{price}$</p>
     <div>
     <Link to={`/service/${id}`}>
     <button
