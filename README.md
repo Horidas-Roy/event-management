@@ -1,7 +1,7 @@
 
 ## Demo
 
-live link: 
+live link: https://wedding-management-76038.web.app/
 
 
              ## MCQ TEST

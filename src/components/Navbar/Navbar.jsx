@@ -18,8 +18,9 @@ const Navbar = () => {
          <li><NavLink to='/resister'>Sign Up</NavLink></li>
          {
           user && <>
-             <li><NavLink to='/gallary'>Our Gallery</NavLink></li>
+             <li><NavLink to='/gallary'>Gallery</NavLink></li>
           <li><NavLink to='/invitions'>Invitation Card</NavLink></li>
+          <li className="md:hidden"><button>Log Out</button></li>
           </>
          }
     </>
@@ -41,12 +42,13 @@ const Navbar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-0 shadow rounded-box w-40 bg-[#262626] text-[#FFF]">
         {navlinks}
+       
       </ul>
     </div>
     <a className="btn btn-ghost normal-case text-2xl font-satisfy">Wedding <span className="text-[#5f7f37]">Arranger</span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 text-xl font-bold">
+    <ul className="menu menu-horizontal  text-xl font-medium">
      {navlinks}
     </ul>
   </div>

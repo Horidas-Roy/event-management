@@ -12,7 +12,7 @@ const ServiceCard = ({service}) => {
       className="w-full h-52"
     />
   </div>
-  <div className="p-3 flex flex-col h-[240px]">
+  <div className="p-3 flex flex-col h-[280px]">
     <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
       {title}
     </h5>
