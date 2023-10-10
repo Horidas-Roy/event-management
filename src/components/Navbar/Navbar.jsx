@@ -19,7 +19,7 @@ const Navbar = () => {
          {
           user && <>
              <li><NavLink to='/gallary'>Gallery</NavLink></li>
-          <li><NavLink to='/invitions'>Invitation Card</NavLink></li>
+          <li><NavLink to='/invitions'>Card</NavLink></li>
           <li className="md:hidden"><button>Log Out</button></li>
           </>
          }
