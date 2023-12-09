@@ -3,6 +3,9 @@
 
 live link: https://wedding-management-76038.web.app/
 
+# Technology
+React,Node,Mongodb,Express,Firebase,Tailwind
+
 
              ## MCQ TEST
 
